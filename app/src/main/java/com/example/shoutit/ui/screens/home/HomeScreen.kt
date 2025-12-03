@@ -17,6 +17,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.example.shoutit.R
+import com.example.shoutit.ui.navigation.Routes
 
 @Composable
 fun HomeScreen(navController: NavController) {
@@ -34,7 +35,7 @@ fun HomeScreen(navController: NavController) {
             fontWeight = FontWeight.Bold
         )
         Text(
-            text = "Nuestra misión es proporcionar un espacio accesible y seguro para la sensibilización y educación sobre los diversos tipos de violencia que afectan a la sociedad, así como las rutas de atención disponibles en Bogotá. Buscamos empoderar a la comunidad mediante la difusión de información clara y precisa sobre los derechos de las víctimas y los recursos disponibles para su protección y atención integral.",
+            text = "Nuestra misión es proporcionar un espacio accesible...",
             fontSize = 14.sp,
             textAlign = TextAlign.Justify,
             modifier = Modifier.padding(top = 8.dp)
@@ -48,7 +49,7 @@ fun HomeScreen(navController: NavController) {
             fontWeight = FontWeight.Bold
         )
         Text(
-            text = "Promover la concienciación y el acceso a recursos sobre los tipos de violencia en Bogotá, facilitando información sobre los diferentes tipos de violencia, las rutas de atención disponibles para las víctimas, y ofreciendo un espacio informativo de apoyo social.",
+            text = "Promover la concienciación...",
             fontSize = 14.sp,
             textAlign = TextAlign.Justify,
             modifier = Modifier.padding(top = 8.dp)
@@ -63,12 +64,12 @@ fun HomeScreen(navController: NavController) {
             HomeCard(
                 title = "TIPOS DE VIOLENCIA",
                 imageRes = R.drawable.tipoviolencia,
-                onClick = { navController.navigate("tiposViolencia") }
+                onClick = { navController.navigate(Routes.TIPOS_VIOLENCIA) }
             )
             HomeCard(
                 title = "RUTAS DE ATENCIÓN",
                 imageRes = R.drawable.rutasatencion,
-                onClick = { navController.navigate("rutasAtencion") }
+                onClick = { navController.navigate(Routes.RUTAS_ATENCION) }
             )
         }
     }

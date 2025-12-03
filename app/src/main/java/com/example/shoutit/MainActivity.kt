@@ -11,6 +11,7 @@ import androidx.navigation.compose.rememberNavController
 import com.example.shoutit.ui.header.ShoutItHeader
 import com.example.shoutit.ui.footer.ShoutItFooter
 import com.example.shoutit.ui.navigation.AppNavigation
+import com.example.shoutit.ui.navigation.Routes
 import com.example.shoutit.ui.theme.ShoutItTheme
 
 class MainActivity : ComponentActivity() {
@@ -30,9 +31,9 @@ fun ShoutItApp() {
         Scaffold(
             topBar = {
                 ShoutItHeader(
-                    onInicioClick = { navController.navigate("home") },
-                    onTiposClick = { navController.navigate("tiposViolencia") },
-                    onRutasClick = { navController.navigate("rutasAtencion") }
+                    onInicioClick = { navController.navigate(Routes.HOME) },
+                    onTiposClick = { navController.navigate(Routes.TIPOS_VIOLENCIA) },
+                    onRutasClick = { navController.navigate(Routes.RUTAS_ATENCION) }
                 )
             },
             bottomBar = {

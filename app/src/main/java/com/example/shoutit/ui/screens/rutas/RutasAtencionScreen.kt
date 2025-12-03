@@ -17,6 +17,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.example.shoutit.R
+import com.example.shoutit.ui.navigation.Routes
 
 @Composable
 fun RutasAtencionScreen(navController: NavController) {
@@ -45,12 +46,12 @@ fun RutasAtencionScreen(navController: NavController) {
                 RutaCard(
                     title = "POLICÍA NACIONAL",
                     imageRes = R.drawable.policianacional,
-                    onClick = { navController.navigate("ruta_policia") }
+                    onClick = { navController.navigate(Routes.RUTA_POLICIA) }
                 )
                 RutaCard(
                     title = "FISCALÍA GENERAL",
                     imageRes = R.drawable.fiscaliageneral,
-                    onClick = { navController.navigate("ruta_fiscalia") }
+                    onClick = { navController.navigate(Routes.RUTA_FISCALIA) }
                 )
             }
 
@@ -61,14 +62,14 @@ fun RutasAtencionScreen(navController: NavController) {
                 horizontalArrangement = Arrangement.SpaceEvenly
             ) {
                 RutaCard(
-                    title = "DEFENSORÍA DEL PUEBLO",
+                    title = "DEFENSORÍA",
                     imageRes = R.drawable.defensoria,
-                    onClick = { navController.navigate("ruta_defensoria") }
+                    onClick = { navController.navigate(Routes.RUTA_DEFENSORIA) }
                 )
                 RutaCard(
                     title = "MEDICINA LEGAL",
                     imageRes = R.drawable.medicinalegal,
-                    onClick = { navController.navigate("ruta_medicina") }
+                    onClick = { navController.navigate(Routes.RUTA_MEDICINA) }
                 )
             }
 
@@ -81,12 +82,12 @@ fun RutasAtencionScreen(navController: NavController) {
                 RutaCard(
                     title = "ICBF",
                     imageRes = R.drawable.icbf,
-                    onClick = { navController.navigate("ruta_icbf") }
+                    onClick = { navController.navigate(Routes.RUTA_ICBF) }
                 )
                 RutaCard(
                     title = "LÍNEA PÚRPURA",
                     imageRes = R.drawable.lineapurpura,
-                    onClick = { navController.navigate("ruta_lineapurpura") }
+                    onClick = { navController.navigate(Routes.RUTA_LINEA_PURPURA) }
                 )
             }
 
@@ -97,14 +98,14 @@ fun RutasAtencionScreen(navController: NavController) {
                 horizontalArrangement = Arrangement.SpaceEvenly
             ) {
                 RutaCard(
-                    title = "SECRETARÍA DISTRITAL DE LA MUJER",
+                    title = "SECRETARÍA MUJER",
                     imageRes = R.drawable.secretariadistritalmujer,
-                    onClick = { navController.navigate("ruta_secretaria_mujer") }
+                    onClick = { navController.navigate(Routes.RUTA_SECRETARIA_MUJER) }
                 )
                 RutaCard(
                     title = "CASAS DE JUSTICIA",
                     imageRes = R.drawable.casasjusticia,
-                    onClick = { navController.navigate("ruta_casas_justicia") }
+                    onClick = { navController.navigate(Routes.RUTA_CASAS_JUSTICIA) }
                 )
             }
 
@@ -117,7 +118,7 @@ fun RutasAtencionScreen(navController: NavController) {
                 RutaCard(
                     title = "COMISARÍAS DE FAMILIA",
                     imageRes = R.drawable.comisariasfamilia,
-                    onClick = { navController.navigate("ruta_comisarias_familia") }
+                    onClick = { navController.navigate(Routes.RUTA_COMISARIAS_FAMILIA) }
                 )
             }
         }

@@ -40,41 +40,41 @@ fun AppNavigation(
 ) {
     NavHost(
         navController = navController,
-        startDestination = "home",
+        startDestination = Routes.HOME,
         modifier = modifier
     ) {
 
         // HOME
-        composable("home") {
+        composable(Routes.HOME) {
             HomeScreen(navController)
         }
 
         // TIPOS DE VIOLENCIA
-        composable("tiposViolencia") {
+        composable(Routes.TIPOS_VIOLENCIA) {
             TiposViolenciaScreen(navController)
         }
 
         // PANTALLAS DE VIOLENCIA
-        composable("violencia_fisica") { ViolenciaFisicaScreen(navController) }
-        composable("violencia_psicologica") { ViolenciaPsicologicaScreen(navController) }
-        composable("violencia_sexual") { ViolenciaSexualScreen(navController) }
-        composable("violencia_economica") { ViolenciaEconomicaScreen(navController) }
-        composable("violencia_genero") { ViolenciaGeneroScreen(navController) }
+        composable(Routes.VIOLENCIA_FISICA) { ViolenciaFisicaScreen(navController) }
+        composable(Routes.VIOLENCIA_PSICOLOGICA) { ViolenciaPsicologicaScreen(navController) }
+        composable(Routes.VIOLENCIA_SEXUAL) { ViolenciaSexualScreen(navController) }
+        composable(Routes.VIOLENCIA_ECONOMICA) { ViolenciaEconomicaScreen(navController) }
+        composable(Routes.VIOLENCIA_GENERO) { ViolenciaGeneroScreen(navController) }
 
         // LISTADO RUTAS
-        composable("rutasAtencion") {
+        composable(Routes.RUTAS_ATENCION) {
             RutasAtencionScreen(navController)
         }
 
         // ENTIDADES
-        composable("ruta_policia") { PoliciaNacionalScreen(navController) }
-        composable("ruta_fiscalia") { FiscaliaGeneralScreen(navController) }
-        composable("ruta_defensoria") { DefensoriaScreen(navController) }
-        composable("ruta_medicina") { MedicinaLegalScreen(navController) }
-        composable("ruta_icbf") { IcbfScreen(navController) }
-        composable("ruta_lineapurpura") { LineaPurpuraScreen(navController) }
-        composable("ruta_secretaria_mujer") { SecretariaMujerScreen(navController) }
-        composable("ruta_casas_justicia") { CasasJusticiaScreen(navController) }
-        composable("ruta_comisarias_familia") { ComisariasFamiliaScreen(navController) }
+        composable(Routes.RUTA_POLICIA) { PoliciaNacionalScreen(navController) }
+        composable(Routes.RUTA_FISCALIA) { FiscaliaGeneralScreen(navController) }
+        composable(Routes.RUTA_DEFENSORIA) { DefensoriaScreen(navController) }
+        composable(Routes.RUTA_MEDICINA) { MedicinaLegalScreen(navController) }
+        composable(Routes.RUTA_ICBF) { IcbfScreen(navController) }
+        composable(Routes.RUTA_LINEA_PURPURA) { LineaPurpuraScreen(navController) }
+        composable(Routes.RUTA_SECRETARIA_MUJER) { SecretariaMujerScreen(navController) }
+        composable(Routes.RUTA_CASAS_JUSTICIA) { CasasJusticiaScreen(navController) }
+        composable(Routes.RUTA_COMISARIAS_FAMILIA) { ComisariasFamiliaScreen(navController) }
     }
 }
