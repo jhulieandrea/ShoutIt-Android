@@ -5,33 +5,23 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import androidx.lifecycle.viewmodel.compose.viewModel
 
 // HOME
 import com.example.shoutit.ui.screens.home.HomeScreen
 
 // TIPOS
 import com.example.shoutit.ui.screens.tipos.TiposViolenciaScreen
+import com.example.shoutit.viewmodel.TiposViolenciaViewModel
 
 // RUTAS
 import com.example.shoutit.ui.screens.rutas.RutasAtencionScreen
 
 // ENTIDADES
-import com.example.shoutit.ui.screens.entidades.CasasJusticiaScreen
-import com.example.shoutit.ui.screens.entidades.ComisariasFamiliaScreen
-import com.example.shoutit.ui.screens.entidades.DefensoriaScreen
-import com.example.shoutit.ui.screens.entidades.FiscaliaGeneralScreen
-import com.example.shoutit.ui.screens.entidades.IcbfScreen
-import com.example.shoutit.ui.screens.entidades.LineaPurpuraScreen
-import com.example.shoutit.ui.screens.entidades.MedicinaLegalScreen
-import com.example.shoutit.ui.screens.entidades.PoliciaNacionalScreen
-import com.example.shoutit.ui.screens.entidades.SecretariaMujerScreen
+import com.example.shoutit.ui.screens.entidades.*
 
 // VIOLENCIAS
-import com.example.shoutit.ui.screens.violencia.ViolenciaEconomicaScreen
-import com.example.shoutit.ui.screens.violencia.ViolenciaFisicaScreen
-import com.example.shoutit.ui.screens.violencia.ViolenciaGeneroScreen
-import com.example.shoutit.ui.screens.violencia.ViolenciaPsicologicaScreen
-import com.example.shoutit.ui.screens.violencia.ViolenciaSexualScreen
+import com.example.shoutit.ui.screens.violencia.*
 
 @Composable
 fun AppNavigation(
@@ -51,7 +41,8 @@ fun AppNavigation(
 
         // TIPOS DE VIOLENCIA
         composable(Routes.TIPOS_VIOLENCIA) {
-            TiposViolenciaScreen(navController)
+            val vm: TiposViolenciaViewModel = viewModel()
+            TiposViolenciaScreen(navController, vm)
         }
 
         // PANTALLAS DE VIOLENCIA

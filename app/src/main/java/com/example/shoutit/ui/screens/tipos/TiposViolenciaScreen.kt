@@ -1,49 +1,73 @@
 package com.example.shoutit.ui.screens.tipos
 
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
-import androidx.compose.material3.Card
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.collectAsState
+import androidx.compose.material3.*
+import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
-import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.shoutit.viewmodel.TiposViolenciaViewModel
+import com.example.shoutit.ui.navigation.Routes
 
 @Composable
 fun TiposViolenciaScreen(
     navController: NavHostController,
-    viewModel: TiposViolenciaViewModel = viewModel()
+    viewModel: TiposViolenciaViewModel
 ) {
-
     val lista = viewModel.tipos.collectAsState()
 
-    LazyColumn(
+    Column(
         modifier = Modifier
             .fillMaxSize()
             .padding(8.dp)
     ) {
-        items(lista.value) { item ->
-            Card(
+
+        // =======================
+        // ESTADO: CARGANDO
+        // =======================
+        if (lista.value.isEmpty()) {
+            Text(
+                text = "Cargando información...",
+                style = MaterialTheme.typography.titleLarge,
+                modifier = Modifier.padding(16.dp)
+            )
+        } else {
+
+            // =======================
+            // ESTADO: LISTA CARGADA
+            // =======================
+            LazyColumn(
                 modifier = Modifier
-                    .fillMaxWidth()
+                    .fillMaxSize()
                     .padding(8.dp)
             ) {
-                Column(
-                    modifier = Modifier.padding(16.dp)
-                ) {
-                    Text(
-                        text = item.titulo,
-                        style = MaterialTheme.typography.titleLarge
-                    )
-                    Text(text = item.descripcion)
+                items(lista.value) { item ->
+                    Card(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(8.dp)
+                            .clickable {
+                                when (item.id) {
+                                    1 -> navController.navigate(Routes.VIOLENCIA_FISICA)
+                                    2 -> navController.navigate(Routes.VIOLENCIA_PSICOLOGICA)
+                                    3 -> navController.navigate(Routes.VIOLENCIA_SEXUAL)
+                                    4 -> navController.navigate(Routes.VIOLENCIA_ECONOMICA)
+                                    5 -> navController.navigate(Routes.VIOLENCIA_GENERO)
+                                }
+                            },
+                        elevation = CardDefaults.cardElevation(6.dp)
+                    ) {
+                        Column(Modifier.padding(16.dp)) {
+                            Text(
+                                text = item.titulo,
+                                style = MaterialTheme.typography.titleLarge
+                            )
+                            Text(text = item.descripcion)
+                        }
+                    }
                 }
             }
         }
